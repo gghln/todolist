@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    margin: 0;
+    height: 100px;
+    background-color: black;
+    opacity: 0.5;
+}
+
+header p {
+    margin: 0;
+    font-size: 48px;
+    color: white;
+    text-align: left;
+    padding: 20px 0 0 20px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    height: 650px;
+}
+
+nav {
+    flex-grow:1;
+    margin: 0;
+    background-color: black;
+    opacity: 0.5;
+}
+
+nav p {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    text-align: left;
+    padding: 20px 0 0 50px;
+}
+
+.main-container{
+    flex-grow: 10;
+}
+
+.main-container button{
+    border-style:none;
+    background-color: lightgreen;
+    width:50px;
+    height:50px;
+    border-radius: 5px;
+}
