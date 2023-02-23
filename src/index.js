@@ -1,16 +1,17 @@
 import {addTask} from './Tasks'
-import {createTask} from './UI.js'
+import {toggleForm, loadUI} from './UI.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+    loadUI()
 
-    let createForm = document.querySelector('#createForm')
-    createForm.addEventListener('click', () =>{
-        createTask()
-        
-        let submitTask = document.querySelector('#submitTask')
-        submitTask.addEventListener('click', () => {
-        addTask()
-    })   
+    let test = document.querySelector('#createForm')
+    test.addEventListener('click', () =>{
+        toggleForm()  
     })
+
+    let submitTask = document.querySelector('#submitTask')
+    submitTask.addEventListener('click', () => {
+        addTask()
+    }) 
 })
 
