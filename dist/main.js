@@ -1,0 +1,1 @@
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",(()=>{const t=document.getElementById("content"),e=document.createElement("div");e.setAttribute("class","todo-container"),t.appendChild(e)}))})();
