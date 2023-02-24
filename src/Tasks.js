@@ -2,16 +2,15 @@ const Task = (title,description,date,priority) => {
     return{title,description,date,priority}
 }
 
-let array = []
+let tasksArray = []
 
-const addTask = () =>{
-    let t1= document.getElementById('title').value
-    let t2 = document.getElementById('description').value
-    let t3 = document.getElementById('date').value
-    let t4 = document.getElementById('priority').value
-    let task = Task(t1,t2,t3,t4)
-    array.push(task)
-    console.log(task)
+const addTask = (title,description,date,priority) =>{
+    title= document.getElementById('title').value
+    description = document.getElementById('description').value
+    date = document.getElementById('date').value
+    priority = document.getElementById('priority').value
+    let task = Task(title,description,date,priority)
+    tasksArray.push(task)
+    localStorage.setItem('tasksArray',JSON.stringify(tasksArray))
 }
-
-export {addTask,array}
+export {addTask}

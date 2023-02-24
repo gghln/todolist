@@ -40,11 +40,11 @@ nav p {
 }
 
 .main-container{
+    display: flex;
     flex-grow: 10;
 }
 
 .main-container button{
-    display: flex;
     border-style:none;
     background-color: lightgreen;
     width:50px;
