@@ -1,6 +1,6 @@
 const loadUI = () => {
     let mainContainer = document.getElementById('main-container')
-    //Create Task 
+    //Create a Task 
     let taskForm =`<div id="taskForm">
                 <input type="sumbit" id="title">
                 <input type="text" id="description">
@@ -16,9 +16,23 @@ const loadUI = () => {
     let toggleForm = document.getElementById('taskForm')
     toggleForm.style.visibility = 'hidden'
 
+
+    //Create a Project
+    let project = document.getElementById('project-container')
+
+    let newProject = `<div class="submitProject" id="submitProject">
+                        <input type="sumbit" id="projectName" placeholder="Project Name">  
+                        <input type="submit" id="addProject">
+                     </div>`
+    project.innerHTML += newProject
+    let toggleProject = document.getElementById('submitProject')
+    toggleProject.style.visibility = 'hidden'
+
     showTasks()
+    showProjects()
 }
 
+//Toggle create task form on and off
 const toggleForm = () =>{
     let toggleForm = document.getElementById('taskForm')
     if(toggleForm.style.visibility == 'hidden'){
@@ -31,21 +45,37 @@ const toggleForm = () =>{
 //Show all tasks in local storage
 const showTasks = () =>{
     const storedTasks = JSON.parse(localStorage.getItem('tasksArray'))
-        for(let i = 0; i < storedTasks.length; i++)
-        {   
+        for(let i = 0; i < storedTasks.length; i++){   
             let taskContainer = document.getElementById('taskView-container')
             const newTask = `<div class="task">
-                                <div id="task-title">${storedTasks[i].title}</div>
-                                <div id="task-description">${storedTasks[i].description}</div>
-                                <div id="task-date">${storedTasks[i].date}</div>
-                                <div id="task-priority">${storedTasks[i].priority}</div>
+                                <div class="task-title">${storedTasks[i].title}</div>
+                                <div class="task-description">${storedTasks[i].description}</div>
+                                <div class="task-date">${storedTasks[i].date}</div>
+                                <div class="priority">${storedTasks[i].priority}</div>
                             </div>`
             taskContainer.innerHTML += newTask
         }
 }
 
-const updateTasks = () =>{
-    showTasks()
+//Create a project
+const newProject = () =>{
+    let toggleProject = document.getElementById('submitProject')
+    if(toggleProject.style.visibility == 'hidden'){
+        toggleProject.style.visibility = 'visible';
+    }else{
+        toggleProject.style.visibility = 'hidden';
+    }
 }
 
-export {toggleForm,loadUI,updateTasks}
+//Show all Projects from local storage
+const showProjects = () =>{
+    const storedProjects = JSON.parse(localStorage.getItem('projectsArray'))
+    for(let i = 0; i < storedProjects.length; i++){
+        const projectContainer = document.getElementById('projectList')
+        const project = `<div class="project">${storedProjects[i]}</div>`
+
+        projectContainer.innerHTML += project
+    }
+}
+
+export {toggleForm,loadUI,showTasks,newProject,showProjects}

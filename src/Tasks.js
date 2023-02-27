@@ -2,7 +2,7 @@ const Task = (title,description,date,priority) => {
     return{title,description,date,priority}
 }
 
-let tasksArray = []
+let tasksArray = JSON.parse(localStorage.getItem('tasksArray')) || []
 
 const addTask = (title,description,date,priority) =>{
     title= document.getElementById('title').value
