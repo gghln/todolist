@@ -1,5 +1,3 @@
-import {Task} from './Tasks'
-
 let projectsArray = JSON.parse(localStorage.getItem('projectsArray')) || []
 
 const addProject = () => {

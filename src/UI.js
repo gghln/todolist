@@ -28,7 +28,7 @@ const loadUI = () => {
     let toggleProject = document.getElementById('submitProject')
     toggleProject.style.visibility = 'hidden'
 
-    showTasks()
+    //showTasks()
     showProjects()
 }
 
@@ -43,11 +43,14 @@ const toggleForm = () =>{
 }
 
 //Show all tasks in local storage
-const showTasks = () =>{
+const showTasks = (currentProject) =>{
+    let taskContainer = document.getElementById('taskView-container')
     const storedTasks = JSON.parse(localStorage.getItem('tasksArray'))
+    const projectName = `<h1 id="nikolas">${currentProject}</h1>`
+    taskContainer.innerHTML += projectName
         for(let i = 0; i < storedTasks.length; i++){   
-            let taskContainer = document.getElementById('taskView-container')
-            const newTask = `<div class="task">
+            const newTask = `
+                            <div class="task">
                                 <div class="task-title">${storedTasks[i].title}</div>
                                 <div class="task-description">${storedTasks[i].description}</div>
                                 <div class="task-date">${storedTasks[i].date}</div>

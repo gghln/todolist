@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let submitTask = document.querySelector('#submitTask')
     submitTask.addEventListener('click', () => {
         addTask()
-        showTasks()
     }) 
 
     let createProject = document.querySelector('#createProject')
@@ -25,15 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let addNewProject = document.querySelector('#addProject')
     addNewProject.addEventListener('click', () => {
         addProject()
-        showProjects()
     })
 
     let chooceProject = document.querySelectorAll('.project')
     chooceProject.forEach((e) =>{
         e.addEventListener('click', () =>{
             let currentProject = e.innerHTML
-            console.log(currentProject)
+            showTasks(currentProject)
         })
     })
 })
-
