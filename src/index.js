@@ -1,6 +1,6 @@
 import {addTask} from './Tasks'
 import {addProject} from './Projects'
-import {toggleForm,loadUI,newProject,showProjects,showTasks} from './UI.js'
+import {toggleForm,loadUI,newProject,refreshTaskView,showTasks} from './UI.js'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,12 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let addNewProject = document.querySelector('#addProject')
     addNewProject.addEventListener('click', () => {
         addProject()
+        window.location.reload()
     })
 
     let chooceProject = document.querySelectorAll('.project')
     chooceProject.forEach((e) =>{
         e.addEventListener('click', () =>{
             let currentProject = e.innerHTML
+            refreshTaskView()
             showTasks(currentProject)
         })
     })
