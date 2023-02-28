@@ -28,7 +28,7 @@ const loadUI = () => {
     let toggleProject = document.getElementById('submitProject')
     toggleProject.style.visibility = 'hidden'
 
-    //On load -> Default project
+    // // //On load -> Default project
     let taskContainer = document.getElementById('taskView-container')
     const storedTasks = JSON.parse(localStorage.getItem('tasksArray'))
     const projectName = `<h1 id="nikolas">Default</h1>`
