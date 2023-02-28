@@ -47,8 +47,8 @@ const loadUI = () => {
                                     <div class="task-description">${storedTasks[i].description}</div>
                                     <div class="task-priority">${storedTasks[i].priority}</div>
                                 </div>
-                                <button id="Edit">Edit</button>
-                                <button id="Delete">Delete</button>
+                                <button class="Edit">Edit</button>
+                                <button class="Delete">Delete</button>
                             </div>`
                 taskContainer.innerHTML += newTask
             }
@@ -78,16 +78,16 @@ const showTasks = (currentProject) =>{
         for(let i = 0; i < storedTasks.length; i++){   
             if(storedTasks[i].project == currentProject){
                 const newTask = `<div id="card-container">
-                                <input id="checkbox" type="checkbox">
-                                <div class="task">
-                                    <div class="task-title">${storedTasks[i].title}</div>
-                                    <div class="task-date">${storedTasks[i].date}</div>
-                                    <div class="task-description">${storedTasks[i].description}</div>
-                                    <div class="task-priority">${storedTasks[i].priority}</div>
-                                </div>
-                                <button id="Edit">Edit</button>
-                                <button id="Delete">Delete</button>
-                            </div>`
+                                    <input id="checkbox" type="checkbox">
+                                    <div class="task">
+                                        <div class="task-title">${storedTasks[i].title}</div>
+                                        <div class="task-date">${storedTasks[i].date}</div>
+                                        <div class="task-description">${storedTasks[i].description}</div>
+                                        <div class="task-priority">${storedTasks[i].priority}</div>
+                                    </div>
+                                    <button class="Edit">Edit</button>
+                                    <button class="Delete">Delete</button>
+                                </div>`
                 taskContainer.innerHTML += newTask
             }
         }
