@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let createProject = document.querySelector('#createProject')
     createProject.addEventListener('click', () => {
         newProject()
+        createProject.style.display = 'none'
     }) 
 
     let addNewProject = document.querySelector('#addProject')

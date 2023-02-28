@@ -22,7 +22,7 @@ const loadUI = () => {
 
     let newProject = `<div class="submitProject" id="submitProject">
                         <input type="sumbit" id="projectName" placeholder="Project Name">  
-                        <input type="submit" id="addProject">
+                        <input type="submit" id="addProject" value="Add Project">
                      </div>`
     project.innerHTML += newProject
     let toggleProject = document.getElementById('submitProject')
@@ -31,16 +31,24 @@ const loadUI = () => {
     // // //On load -> Default project
     let taskContainer = document.getElementById('taskView-container')
     const storedTasks = JSON.parse(localStorage.getItem('tasksArray'))
-    const projectName = `<h1 id="nikolas">Default</h1>`
+    const projectName = `<div id="mainTitle">
+                            <h1 id="nikolas">Default</h1>
+                            <button id="createTask">Add Task</button>
+                        </div>`
     taskContainer.innerHTML += projectName
         for(let i = 0; i < storedTasks.length; i++){   
             if(storedTasks[i].project == 'Default'){
                 const newTask = `
-                            <div class="task">
-                                <div class="task-title">${storedTasks[i].title}</div>
-                                <div class="task-description">${storedTasks[i].description}</div>
-                                <div class="task-date">${storedTasks[i].date}</div>
-                                <div class="priority">${storedTasks[i].priority}</div>
+                            <div id="card-container">
+                                <input id="checkbox" type="checkbox">
+                                <div class="task">
+                                    <div class="task-title">${storedTasks[i].title}</div>
+                                    <div class="task-date">${storedTasks[i].date}</div>
+                                    <div class="task-description">${storedTasks[i].description}</div>
+                                    <div class="task-priority">${storedTasks[i].priority}</div>
+                                </div>
+                                <button id="Edit">Edit</button>
+                                <button id="Delete">Delete</button>
                             </div>`
                 taskContainer.innerHTML += newTask
             }
@@ -62,16 +70,23 @@ const toggleForm = () =>{
 const showTasks = (currentProject) =>{
     let taskContainer = document.getElementById('taskView-container')
     const storedTasks = JSON.parse(localStorage.getItem('tasksArray'))
-    const projectName = `<h1 id="nikolas">${currentProject}</h1>`
+    const projectName = `<div id="mainTitle">
+                            <h1 id="nikolas">Default</h1>
+                            <button id="createTask">Add Task</button>
+                        </div>`
     taskContainer.innerHTML += projectName
         for(let i = 0; i < storedTasks.length; i++){   
             if(storedTasks[i].project == currentProject){
-                const newTask = `
-                            <div class="task">
-                                <div class="task-title">${storedTasks[i].title}</div>
-                                <div class="task-description">${storedTasks[i].description}</div>
-                                <div class="task-date">${storedTasks[i].date}</div>
-                                <div class="priority">${storedTasks[i].priority}</div>
+                const newTask = `<div id="card-container">
+                                <input id="checkbox" type="checkbox">
+                                <div class="task">
+                                    <div class="task-title">${storedTasks[i].title}</div>
+                                    <div class="task-date">${storedTasks[i].date}</div>
+                                    <div class="task-description">${storedTasks[i].description}</div>
+                                    <div class="task-priority">${storedTasks[i].priority}</div>
+                                </div>
+                                <button id="Edit">Edit</button>
+                                <button id="Delete">Delete</button>
                             </div>`
                 taskContainer.innerHTML += newTask
             }

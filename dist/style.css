@@ -21,19 +21,19 @@ header p {
 .flex-container{
     display: flex;
     flex-direction: row;
-    height: 650px;
+    height: 100%;
 }
 
 .main-container{
     display: flex;
-    flex-grow: 10;
+    flex-grow: 3;
 }
 
 .main-container button{
     border-style:none;
     background-color: lightgreen;
-    width:50px;
-    height:50px;
+    width:150px;
+    height:30px;
     border-radius: 5px;
     position: relative;
     top:50%;
@@ -44,9 +44,10 @@ header p {
 
 /*Project Bar*/
 nav {
+    width: 300px;
     flex-grow:1;
     margin: 0;
-    border-right: solid 1px;
+    background-color: #96b3bc;
 }
 
 nav p {
@@ -65,7 +66,7 @@ nav p {
 
 #createProject{
     position:relative;
-    left: 25%;
+    left: 10%;
     margin-top: 2em;
     width:200px;
     height: 40px;
@@ -87,4 +88,79 @@ nav p {
 .project:hover, #createProject:hover{
     background-color: darkgray;
     cursor: pointer;
+}
+
+#submitProject{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:1em;
+}
+
+#projectName{
+    width: 200px;
+    border:none;
+    border-bottom: 1px solid;
+    outline:none;
+    font-size: 20px;
+}
+
+#addProject{   
+    margin-top: 2em;
+    width:200px;
+    height: 40px;
+    background-color: grey;
+    color:white;
+    font-size: 20px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+#mainTitle{
+    display:flex;
+    flex-direction: row;
+    gap:1em;
+    align-items: center;
+    margin-left: 3em;
+}
+
+/*To Do*/
+
+#card-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 3em;
+    gap:1em;
+    margin-bottom: 2em;
+}
+
+#checkbox{
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+.task{
+    display:grid;
+    border-style: solid;
+    border-radius: 5px;
+    width:350px;
+    height:60px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    background: linear-gradient(to right,white 95%,orange 5%);
+}
+
+.task-title, .task-date{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.task-description, .task-priority{
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
 }
